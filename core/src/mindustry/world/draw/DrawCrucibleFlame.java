@@ -6,6 +6,7 @@ import arc.math.*;
 import arc.math.Interp.*;
 import arc.util.*;
 import mindustry.gen.*;
+import static mindustry.Vars.*;
 
 public class DrawCrucibleFlame extends DrawBlock{
     public Color flameColor = Color.valueOf("f58349"), midColor = Color.valueOf("f2d585");

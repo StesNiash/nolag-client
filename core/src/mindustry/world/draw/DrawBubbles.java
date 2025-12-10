@@ -4,6 +4,7 @@ import arc.graphics.*;
 import arc.graphics.g2d.*;
 import arc.util.*;
 import mindustry.gen.*;
+import static mindustry.Vars.*;
 
 public class DrawBubbles extends DrawBlock{
     public Color color = Color.valueOf("7457ce");
@@ -32,7 +33,7 @@ public class DrawBubbles extends DrawBlock{
             float x = rand.range(spread), y = rand.range(spread);
             float life;
             
-            if(Vars.renderer.disableBlockAnimation){
+            if(renderer.disableBlockAnimation){
                 // Static bubbles when animation is disabled
                 life = 0.5f; // Fixed middle state
             }else{

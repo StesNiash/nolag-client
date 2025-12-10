@@ -5,6 +5,7 @@ import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.util.*;
 import mindustry.gen.*;
+import static mindustry.Vars.*;
 
 public class DrawCircles extends DrawBlock{
     public Color color = Color.valueOf("7457ce");

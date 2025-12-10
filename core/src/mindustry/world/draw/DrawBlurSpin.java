@@ -5,6 +5,7 @@ import arc.graphics.g2d.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawBlurSpin extends DrawBlock{
     public TextureRegion region, blurRegion;
@@ -21,7 +22,7 @@ public class DrawBlurSpin extends DrawBlock{
 
     @Override
     public void draw(Building build){
-        if(Vars.renderer.disableBlockAnimation){
+        if(renderer.disableBlockAnimation){
             Draw.rect(build.warmup() > blurThresh ? blurRegion : region, build.x + x, build.y + y);
         }else{
             Drawf.spinSprite(build.warmup() > blurThresh ? blurRegion : region, build.x + x, build.y + y, build.totalProgress() * rotateSpeed);

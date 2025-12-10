@@ -8,7 +8,7 @@ import arc.util.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
-
+import static mindustry.Vars.*;
 public class DrawPlasma extends DrawFlame{
     public TextureRegion[] regions;
     public String suffix = "-plasma-";

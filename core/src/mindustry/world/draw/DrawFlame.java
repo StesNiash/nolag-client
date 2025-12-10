@@ -8,6 +8,7 @@ import arc.util.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawFlame extends DrawBlock{
     public Color flameColor = Color.valueOf("ffc999");
@@ -33,14 +34,14 @@ public class DrawFlame extends DrawBlock{
         if(build.warmup() > 0f && flameColor.a > 0.001f){
             float g = 0.3f;
             float r = 0.06f;
-            float cr = Vars.renderer.disableBlockAnimation ? 0f : Mathf.random(0.1f);
+            float cr = renderer.disableBlockAnimation ? 0f : Mathf.random(0.1f);
 
             Draw.z(Layer.block + 0.01f);
 
             Draw.alpha(build.warmup());
             Draw.rect(top, build.x, build.y);
 
-            if(!Vars.renderer.disableBlockAnimation){
+            if(!renderer.disableBlockAnimation){
                 Draw.alpha(((1f - g) + Mathf.absin(Time.time, 8f, g) + Mathf.random(r) - r) * build.warmup());
 
                 Draw.tint(flameColor);

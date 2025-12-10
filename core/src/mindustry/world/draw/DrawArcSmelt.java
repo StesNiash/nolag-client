@@ -5,6 +5,7 @@ import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.util.*;
 import mindustry.gen.*;
+import static mindustry.Vars.*;
 
 public class DrawArcSmelt extends DrawBlock{
     public Color flameColor = Color.valueOf("f58349"), midColor = Color.valueOf("f2d585");

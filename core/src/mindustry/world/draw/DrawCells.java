@@ -8,6 +8,7 @@ import arc.util.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawCells extends DrawBlock{
     public TextureRegion middle;

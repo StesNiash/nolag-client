@@ -7,6 +7,7 @@ import arc.math.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawGlowRegion extends DrawBlock{
     public Blending blending = Blending.additive;

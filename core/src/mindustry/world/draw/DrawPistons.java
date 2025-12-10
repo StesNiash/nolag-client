@@ -7,6 +7,7 @@ import arc.util.*;
 import mindustry.entities.units.*;
 import mindustry.gen.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawPistons extends DrawBlock{
     public float sinMag = 4f, sinScl = 6f, sinOffset = 50f, sideOffset = 0f, lenOffset = -1f, horiOffset = 0f, angleOffset = 0f;
@@ -23,7 +24,7 @@ public class DrawPistons extends DrawBlock{
 
     @Override
     public void draw(Building build){
-        if(Vars.renderer.disableBlockAnimation){
+        if(renderer.disableBlockAnimation){
             for(int i = 0; i < sides; i++){
                 float len = lenOffset;
                 float angle = angleOffset + i * 360f / sides;

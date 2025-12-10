@@ -6,6 +6,7 @@ import arc.math.*;
 import arc.math.Interp.*;
 import arc.util.*;
 import mindustry.gen.*;
+import static mindustry.Vars.*;
 
 public class DrawParticles extends DrawBlock{
     public Color color = Color.valueOf("f2d585");
@@ -22,7 +23,7 @@ public class DrawParticles extends DrawBlock{
     public void draw(Building build){
 
         if(build.warmup() > 0f){
-            if(Vars.renderer.disableBlockAnimation){
+            if(renderer.disableBlockAnimation){
                 // Draw static particles when animation is disabled
                 float a = alpha * build.warmup();
                 Draw.blend(blending);

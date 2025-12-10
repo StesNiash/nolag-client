@@ -3,6 +3,7 @@ package mindustry.world.draw;
 import arc.graphics.*;
 import arc.graphics.g2d.*;
 import mindustry.gen.*;
+import static mindustry.Vars.*;
 
 public class DrawSpikes extends DrawBlock{
     public Color color = Color.valueOf("7457ce");

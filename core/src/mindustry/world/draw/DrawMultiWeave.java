@@ -6,6 +6,7 @@ import arc.graphics.g2d.*;
 import arc.math.*;
 import mindustry.gen.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawMultiWeave extends DrawBlock{
     public TextureRegion weave, glow;

@@ -8,6 +8,7 @@ import arc.util.*;
 import mindustry.entities.units.*;
 import mindustry.gen.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawWarmupRegion extends DrawBlock{
     public float sinMag = 0.6f, sinScl = 8f;

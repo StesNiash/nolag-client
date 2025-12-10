@@ -5,6 +5,7 @@ import arc.graphics.g2d.*;
 import arc.math.*;
 import mindustry.gen.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawFrames extends DrawBlock{
     /** Number of frames to draw. */
@@ -17,7 +18,7 @@ public class DrawFrames extends DrawBlock{
 
     @Override
     public void draw(Building build){
-        if(Vars.renderer.disableBlockAnimation){
+        if(renderer.disableBlockAnimation){
             Draw.rect(regions[0], build.x, build.y);
         }else{
             Draw.rect(

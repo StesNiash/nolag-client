@@ -8,6 +8,7 @@ import arc.math.Interp.*;
 import arc.util.*;
 import mindustry.gen.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawSoftParticles extends DrawBlock{
     public TextureRegion region;

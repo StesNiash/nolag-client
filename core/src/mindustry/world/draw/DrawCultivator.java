@@ -7,6 +7,7 @@ import arc.util.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.world.*;
+import static mindustry.Vars.*;
 
 public class DrawCultivator extends DrawBlock{
     public Color plantColor = Color.valueOf("5541b1");
