@@ -13,6 +13,8 @@ public class DrawFade extends DrawBlock{
 
     @Override
     public void draw(Building build){
+        if(renderer.disableBlockAnimation) return;
+        
         Draw.alpha(Mathf.absin(build.totalProgress(), scale, alpha) * build.warmup());
         Draw.rect(region, build.x, build.y);
         Draw.reset();

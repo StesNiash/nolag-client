@@ -31,6 +31,8 @@ public class DrawPlasma extends DrawFlame{
 
     @Override
     public void draw(Building build){
+        if(renderer.disableBlockAnimation) return;
+        
         Draw.blend(Blending.additive);
         for(int i = 0; i < regions.length; i++){
             float r = ((float)regions[i].width * regions[i].scl() - 3f + Mathf.absin(Time.time, 2f + i * 1f, 5f - i * 0.5f));

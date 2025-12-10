@@ -18,6 +18,8 @@ public class DrawArcSmelt extends DrawBlock{
 
     @Override
     public void draw(Building build){
+        if(renderer.disableBlockAnimation) return;
+        
         if(build.warmup() > 0f && flameColor.a > 0.001f){
             Lines.stroke(circleStroke * build.warmup());
 

@@ -21,7 +21,11 @@ public class DrawBlurSpin extends DrawBlock{
 
     @Override
     public void draw(Building build){
-        Drawf.spinSprite(build.warmup() > blurThresh ? blurRegion : region, build.x + x, build.y + y, build.totalProgress() * rotateSpeed);
+        if(Vars.renderer.disableBlockAnimation){
+            Draw.rect(build.warmup() > blurThresh ? blurRegion : region, build.x + x, build.y + y);
+        }else{
+            Drawf.spinSprite(build.warmup() > blurThresh ? blurRegion : region, build.x + x, build.y + y, build.totalProgress() * rotateSpeed);
+        }
     }
 
     @Override

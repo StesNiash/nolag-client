@@ -23,6 +23,8 @@ public class DrawCircles extends DrawBlock{
 
     @Override
     public void draw(Building build){
+        if(renderer.disableBlockAnimation) return;
+        
         if(build.warmup() <= 0.001f) return;
 
         Draw.color(color, build.warmup() * color.a);

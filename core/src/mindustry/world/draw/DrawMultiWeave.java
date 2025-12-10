@@ -16,6 +16,8 @@ public class DrawMultiWeave extends DrawBlock{
 
     @Override
     public void draw(Building build){
+        if(renderer.disableBlockAnimation) return;
+        
         Draw.color(weaveColor);
         if(fadeWeave){
             Draw.alpha(build.warmup());

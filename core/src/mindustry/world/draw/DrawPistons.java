@@ -23,21 +23,40 @@ public class DrawPistons extends DrawBlock{
 
     @Override
     public void draw(Building build){
-        for(int i = 0; i < sides; i++){
-            float len = Mathf.absin(build.totalProgress() + sinOffset + sideOffset * sinScl * i, sinScl, sinMag) + lenOffset;
-            float angle = angleOffset + i * 360f / sides;
-            TextureRegion reg =
-                regiont.found() && (Mathf.equal(angle, 315) || Mathf.equal(angle, 135)) ? regiont :
-                angle >= 135 && angle < 315 ? region2 : region1;
+        if(Vars.renderer.disableBlockAnimation){
+            for(int i = 0; i < sides; i++){
+                float len = lenOffset;
+                float angle = angleOffset + i * 360f / sides;
+                TextureRegion reg =
+                    regiont.found() && (Mathf.equal(angle, 315) || Mathf.equal(angle, 135)) ? regiont :
+                    angle >= 135 && angle < 315 ? region2 : region1;
 
-            if(Mathf.equal(angle, 315)){
-                Draw.yscl = -1f;
+                if(Mathf.equal(angle, 315)){
+                    Draw.yscl = -1f;
+                }
+
+                Tmp.v1.trns(angle, len, -horiOffset);
+                Draw.rect(reg, build.x + Tmp.v1.x, build.y + Tmp.v1.y, angle);
+
+                Draw.yscl = 1f;
             }
+        }else{
+            for(int i = 0; i < sides; i++){
+                float len = Mathf.absin(build.totalProgress() + sinOffset + sideOffset * sinScl * i, sinScl, sinMag) + lenOffset;
+                float angle = angleOffset + i * 360f / sides;
+                TextureRegion reg =
+                    regiont.found() && (Mathf.equal(angle, 315) || Mathf.equal(angle, 135)) ? regiont :
+                    angle >= 135 && angle < 315 ? region2 : region1;
 
-            Tmp.v1.trns(angle, len, -horiOffset);
-            Draw.rect(reg, build.x + Tmp.v1.x, build.y + Tmp.v1.y, angle);
+                if(Mathf.equal(angle, 315)){
+                    Draw.yscl = -1f;
+                }
 
-            Draw.yscl = 1f;
+                Tmp.v1.trns(angle, len, -horiOffset);
+                Draw.rect(reg, build.x + Tmp.v1.x, build.y + Tmp.v1.y, angle);
+
+                Draw.yscl = 1f;
+            }
         }
     }
 

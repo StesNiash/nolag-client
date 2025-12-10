@@ -17,11 +17,15 @@ public class DrawFrames extends DrawBlock{
 
     @Override
     public void draw(Building build){
-        Draw.rect(
-            sine ?
-                regions[(int)Mathf.absin(build.totalProgress(), interval, frames - 0.001f)] :
-                regions[(int)((build.totalProgress() / interval) % frames)],
-            build.x, build.y);
+        if(Vars.renderer.disableBlockAnimation){
+            Draw.rect(regions[0], build.x, build.y);
+        }else{
+            Draw.rect(
+                sine ?
+                    regions[(int)Mathf.absin(build.totalProgress(), interval, frames - 0.001f)] :
+                    regions[(int)((build.totalProgress() / interval) % frames)],
+                build.x, build.y);
+        }
     }
 
     @Override

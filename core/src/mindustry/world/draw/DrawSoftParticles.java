@@ -21,6 +21,7 @@ public class DrawSoftParticles extends DrawBlock{
 
     @Override
     public void draw(Building build){
+        if(renderer.disableBlockAnimation) return;
 
         if(build.warmup() > 0f && color.a > 0.001f){
             float a = alpha * build.warmup();

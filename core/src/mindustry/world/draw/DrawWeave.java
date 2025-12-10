@@ -13,18 +13,22 @@ public class DrawWeave extends DrawBlock{
 
     @Override
     public void draw(Building build){
-        Draw.rect(weave, build.x, build.y, build.totalProgress());
+        if(Vars.renderer.disableBlockAnimation){
+            Draw.rect(weave, build.x, build.y, 0f);
+        }else{
+            Draw.rect(weave, build.x, build.y, build.totalProgress());
 
-        Draw.color(Pal.accent);
-        Draw.alpha(build.warmup());
+            Draw.color(Pal.accent);
+            Draw.alpha(build.warmup());
 
-        Lines.lineAngleCenter(
-        build.x + Mathf.sin(build.totalProgress(), 6f, Vars.tilesize / 3f * build.block.size),
-        build.y,
-        90,
-        build.block.size * Vars.tilesize / 2f);
+            Lines.lineAngleCenter(
+            build.x + Mathf.sin(build.totalProgress(), 6f, Vars.tilesize / 3f * build.block.size),
+            build.y,
+            90,
+            build.block.size * Vars.tilesize / 2f);
 
-        Draw.reset();
+            Draw.reset();
+        }
     }
 
     @Override

@@ -33,6 +33,8 @@ public class DrawHeatOutput extends DrawBlock{
         Draw.rect(Mathf.mod((build.rotation + rotOffset), 4) > 1 ? top2 : top1, build.x, build.y, rotdeg);
 
         if(build instanceof HeatBlock heater && heater.heat() > 0){
+            if(renderer.disableBlockAnimation) return;
+            
             Draw.z(Layer.blockAdditive);
             Draw.blend(Blending.additive);
             Draw.color(heatColor, heater.heatFrac() * (heatColor.a * (1f - heatPulse + Mathf.absin(heatPulseScl, heatPulse))));

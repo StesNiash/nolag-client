@@ -20,6 +20,8 @@ public class DrawCells extends DrawBlock{
     public void draw(Building build){
         Drawf.liquid(middle, build.x, build.y, build.warmup(), color);
 
+        if(renderer.disableBlockAnimation) return;
+
         if(build.warmup() > 0.001f){
             rand.setSeed(build.id);
             for(int i = 0; i < particles; i++){

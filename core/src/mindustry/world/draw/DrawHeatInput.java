@@ -31,6 +31,7 @@ public class DrawHeatInput extends DrawBlock{
 
     @Override
     public void draw(Building build){
+        if(renderer.disableBlockAnimation) return;
 
         Draw.z(Layer.blockAdditive);
         if(build instanceof HeatConsumer hc){

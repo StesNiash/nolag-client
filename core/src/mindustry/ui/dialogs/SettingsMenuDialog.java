@@ -634,6 +634,7 @@ public class SettingsMenuDialog extends BaseDialog{
         graphics.checkPref("indicators", true);
         // graphics.checkPref("showweather", true); FINISHME: Move client weather alpha to this
         graphics.checkPref("animatedwater", true);
+        graphics.checkPref("disableblockanimation", false);
 
         if(Shaders.shield != null){
             graphics.checkPref("animatedshields", !mobile);

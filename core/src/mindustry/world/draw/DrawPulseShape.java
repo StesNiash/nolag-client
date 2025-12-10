@@ -26,6 +26,8 @@ public class DrawPulseShape extends DrawBlock{
 
     @Override
     public void draw(Building build){
+        if(renderer.disableBlockAnimation) return;
+        
         float pz = Draw.z();
         if(layer > 0) Draw.z(layer);
 

@@ -37,6 +37,7 @@ public class DrawGlowRegion extends DrawBlock{
     @Override
     public void draw(Building build){
         if(build.warmup() <= 0.001f) return;
+        if(renderer.disableBlockAnimation) return;
 
         float z = Draw.z();
         if(layer > 0) Draw.z(layer);

@@ -23,6 +23,8 @@ public class DrawCultivator extends DrawBlock{
     public void draw(Building build){
         Drawf.liquid(middle, build.x, build.y, build.warmup(), plantColor);
 
+        if(renderer.disableBlockAnimation) return;
+
         Draw.color(bottomColor, plantColorLight, build.warmup());
 
         rand.setSeed(build.pos());

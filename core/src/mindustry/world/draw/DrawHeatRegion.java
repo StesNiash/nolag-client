@@ -32,6 +32,7 @@ public class DrawHeatRegion extends DrawBlock{
     public void draw(Building build){
         Draw.z(Layer.blockAdditive);
         if(build instanceof HeatCrafterBuild hc && hc.heat > 0){
+            if(renderer.disableBlockAnimation) return;
 
             float z = Draw.z();
             if(layer > 0) Draw.z(layer);

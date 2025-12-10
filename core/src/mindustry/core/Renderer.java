@@ -49,6 +49,7 @@ public class Renderer implements ApplicationListener{
     public @Nullable FrameBuffer backgroundBuffer;
     public FrameBuffer effectBuffer = new FrameBuffer();
     public boolean animateShields, drawWeather = true, drawStatus, enableEffects, drawDisplays = true, drawLight = true;
+    public boolean disableBlockAnimation = false;
     public float weatherAlpha;
     /** minZoom = zooming out, maxZoom = zooming in */
     public float minZoom = 1.5f, maxZoom = 6f; // Note: These aren't used for client min/max zoom, don't change or vanilla compat breaks
@@ -183,6 +184,7 @@ public class Renderer implements ApplicationListener{
         enableEffects = settings.getBool("effects");
         drawDisplays = !settings.getBool("hidedisplays");
         drawLight = settings.getBool("drawlight", true);
+        disableBlockAnimation = settings.getBool("disableblockanimation");
 
         if(landTime > 0){
             if(!state.isPaused()){
